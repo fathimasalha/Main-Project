@@ -1,0 +1,44 @@
+{% extends 'Manufacturer/man index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/updatedstock#hero">
+  <table width="292" border="6"  class="table table-light" style="width:1150px;">
+ <tr align="center"  class="table-secondary">
+      <td colspan="12"><h2><b>UPDATE STOCK</b></h2></td>
+
+  </tr>
+{#     <tr>#}
+{#      <th width="125">Date</th>#}
+{#      <td width="126"><input type="date" name="textfield1"  style="width:206px;" required /></td>#}
+{#    </tr>#}
+    <th>Size</th>
+      <td><select name="select"  class="btn btn-light dropdown-toggle" required>
+          <option>--select--</option>
+          {% for i in sizee %}
+          <option>{{ i }}</option>
+          {% endfor %}
+{#          <option>S</option>#}
+{#          <option>M</option>#}
+{#          <option>L</option>#}
+{#          <option>XL</option>#}
+{#          <option>XXL</option>#}
+      </select></td>
+    <tr>
+      <th width="125">Stock</th>
+      <td width="126"><input type="text" name="textfield"  style="width:206px;" required /></td>
+    </tr>
+{#       <tr>#}
+{#      <th width="125">Date </th>#}
+{#      <td width="126"><input type="date" name="textfield"  style="width:206px;" /></td>#}
+{#    </tr>#}
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Submit" value="UPDATE" class="btn btn-primary" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

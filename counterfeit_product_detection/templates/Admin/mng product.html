@@ -1,0 +1,60 @@
+{% extends 'Admin/admin index.html' %}
+{% block body %}
+
+<body>
+
+<form id="form1" name="form1" method="post" action="/searchproduct#about">
+
+<div id="" style="overflow:scroll; height:500px;">
+  <table width="492" height="216" border="1" class="table table-light">
+   <tr align="center"  class="table-secondary">
+      <td colspan="7"><h2><b>MANAGE PRODUCT</b></h2></td>
+
+  </tr>
+    <tr>
+      <th colspan="5">
+          Product Name
+        <input type="text" name="textfield" value="{{ name }}"/>
+        Category
+        <select name="select"  class="btn btn-light dropdown-toggle" >
+
+             {% for i in val1 %}
+
+            <option value="{{ i.id }}" {% if i.id == cat %} selected {% endif %}>{{ i.category }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" name="Submit" value="Search" class="btn btn-primary"/></th>
+    <td><a href="addproduct#about" class="btn btn-primary"><i class="bi bi-file-earmark-plus-fill"></i></a></td>
+    </tr>
+    <tr>
+      <th>Product Name </th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Size</th>
+      <th>Price</th>
+
+      <td>&nbsp;</td>
+    </tr>{% for i in val %}
+    <tr>
+      <td><img src="{{ i.photo.url }}" width="100" height="140"><br>{{ i.pname }}</td>
+      <td>{{ i.description }}</td>
+      <td>{{ i.CATEGORY.category }}</td>
+        <td>{{ i.size }}</td>
+      <td>{{ i.price}}0</td>
+
+{#      <td>&nbsp;{{ i.size }}</td>#}
+
+
+
+        <td><p><a href="/editproduct/{{ i.id }}#about" class="btn btn-secondary"><i class="bi bi-pencil-square"></i></a></p>
+     <p><a href="/deleteproduct/{{ i.id }}#about"  onclick="return confirm('Are you sure you want to delete this ?')" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a></p></td>
+    </tr>{% endfor %}
+{#    <tr>#}
+{#      <td colspan="7"><div align="center"><a href="addproduct#about" class="btn btn-primary"><i class="bi bi-file-earmark-plus-fill"></i></a></div></td>#}
+{#    </tr>#}
+    </tr>
+  </table>
+</form></div>
+</body>
+</html>
+{% endblock %}

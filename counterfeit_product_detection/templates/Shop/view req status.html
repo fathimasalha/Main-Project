@@ -1,0 +1,41 @@
+{% extends 'Shop/shop index.html' %}
+{% block body %}
+
+<body>
+<div id="" style="overflow:scroll; height:500px;">
+
+<form id="form1" name="form1" method="post" action="/search_req_status_s">
+ <table width="492" height="216" border="1" class="table table-light">
+   <tr align="center"  class="table-secondary">
+      <td colspan="11"><h2><b>VIEW REQUEST STATUS</b></h2></td>
+    <tr>
+    <tr>
+      <th colspan="6">
+        Date
+        <input type="date" name="date" value="{{ date }}"/>
+        <input type="submit" name="Submit" value="Search"  class="btn btn-primary"/></th>
+    </tr>
+       <th >Date </th>
+      <th >Distributor</th>
+      <th>Amount</th>
+        <th >Status</th>
+        <th></th>
+        <th></th>
+
+    </tr>
+       {% for i in val %}
+    <tr>
+      <td>{{ i.date }}</td>
+      <td>{{ i.DISTRIBUTOR.name }}</td>
+      <td>{{ i.amount }}0</td>
+      <td>{{ i.status }}</td>
+      <td></td>
+
+    <td><p><a href="/view_reqstatus_details_s/{{ i.id }}" class="btn btn-link">View Details</a></p>
+    </tr> {% endfor %}
+
+  </table>
+</form></div>
+</body>
+</html>
+{% endblock %}

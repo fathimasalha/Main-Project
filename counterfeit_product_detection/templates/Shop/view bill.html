@@ -1,0 +1,42 @@
+{% extends 'Shop/shop index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/view_billsearch">
+   <table width="492" height="216" border="1" class="table table-light">
+   <tr align="center"  class="table-secondary">
+      <td colspan="7"><h2><b>VIEW BILL</b></h2></td>
+
+  </tr>
+    <tr>
+      <th colspan="7">Date
+      <input type="date" name="textfield" value="{{ date }}" />
+      <input type="submit" name="Submit" value="Search" class="btn btn-primary" /></th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th >Name</th>
+      <th >Phone</th>
+      <th >Amount</th>
+      <th>Status</th>
+        <td></td>
+
+    </tr>
+       {% for i in val  %}
+    <tr>
+      <td>&nbsp;{{ i.date}}</td>
+      <td>{{ i.user}}</td>
+      <td>&nbsp;{{ i.ph_no}}</td>
+      <td>&nbsp;{{ i.amount}}.00</td>
+      <td>&nbsp;{{ i.status }}</td>
+
+    <td><div align="center"><a href="viewmore_bill/{{ i.id }}"  class="btn btn-link">View More</a></div></td>
+
+
+    </tr>
+       {% endfor  %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

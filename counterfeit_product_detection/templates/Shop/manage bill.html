@@ -1,0 +1,62 @@
+{% extends 'Shop/shop index.html' %}
+{% block body %}
+
+
+
+    <style>
+    .hidden-column {
+        display: none;
+    }
+</style>
+<body>
+<form id="form1" name="form1" method="post" action="">
+    <table width="492" height="216" border="1" class="table table-light">
+   <tr align="center"  class="table-secondary">
+      <td colspan="8"><h2><b>BILL GENERATION</b></h2></td>
+
+  </tr>
+
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th >Date</th>
+      <th>Product Name </th>
+      <th>Quantity </th>
+      <th>Price </th>
+      <th>Total</th>
+      <th></th>
+    </tr>
+        {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ i.BILL.user }}</td>
+      <td>{{ i.BILL.ph_no }}</td>
+      <td>{{ i.BILL.date}}</td>
+      <td>{{ i.PRODUCT.pname }}</td>
+      <td>{{ i.quantity }}</td>
+      <td >{{ i.PRODUCT.price}}0</td>
+      <td>{{ i.amount }}.00</td>
+      <td><a href="/deleteviewproduct/{{ i.id }}/{{ i.quantity }}"  onclick="return confirm('Are you sure you want to delete this ?')" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></a></td>
+
+    </tr>
+        {% endfor %}
+        <tr>
+               <td colspan="8" align="center">Total:  <input type="text" name="textfield" value="{{ total }}.00" />
+               </td>
+               <td class="hidden-column">
+            <input type="text" name="textfield2" value="{{ oid }}" />
+        </td>
+
+        </tr>
+    <tr>
+      <td colspan="8" align="center">
+          <a href="/ordrprdct" class="btn btn-primary">Create New Bill</a>
+
+         <a href="/addbill/{{ oid }}" class="btn btn-primary">Create Bill</a>
+
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

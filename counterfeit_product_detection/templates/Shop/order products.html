@@ -1,0 +1,79 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{% extends 'Shop/shop index.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/srchordr_products#about">
+  <table  border="1" class="table table-striped table-light">
+    <tr>
+        <th colspan="11">Name
+        <label>
+            <input type="text" name="textfield" value="{{ name }}"/>
+            <input type="submit" name="Submit" value="search"  class="btn btn-primary"/>
+
+        </label>
+        </th>
+    </tr>
+    <tr>
+      <th>Slno</th>
+      <th>Product Name</th>
+      <th>Description </th>
+      <th>Category</th>
+{#      <td>Image</td>#}
+      <th>Stock</th>
+      <th>Price</th>
+        <td></td>
+    </tr>
+        {% for i in my_objects %}
+
+    <tr>
+{#      <td>{{ forloop.counter }}</td>#}
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;<img src="media/{{ i.photo }}" width="80" height="110">{{ i.pname }} </td>
+        <td>&nbsp;{{ i.description }} </td>
+        <td>&nbsp;{{ i.CATEGORY.category }} </td>
+
+{#      <td> <img src="media/{{ i.photo }}" width="20%"></td>#}
+      <td>{{ i.stock}}</td>
+      <td>{{ i.price}}0</td>
+
+      <td><a href="ordrdtls/{{i.id}}#about" class="btn btn-outline-success">ADD</a></td>
+{#      <td><a href="/viewmycart#about" class="btn btn-outline-danger"> view cart</a></td>#}
+    </tr>
+       {% endfor %}
+  <tr>
+      <td colspan="11">
+
+          <div class="pagination">
+    <span class="step-links">
+        {% if my_objects.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ my_objects.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ my_objects.number }} of {{ my_objects.paginator.num_pages }}.
+        </span>
+
+        {% if my_objects.has_next %}
+            <a href="?page={{ my_objects.next_page_number }}">next</a>
+            <a href="?page={{ my_objects.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+
+      </td>
+  </tr>
+  </table>
+</form>
+
+{% endblock %}
+{#</body>#}
+{#</html>#}

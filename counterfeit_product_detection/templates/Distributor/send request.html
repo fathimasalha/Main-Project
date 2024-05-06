@@ -1,0 +1,86 @@
+{% extends 'Distributor/distributor index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/add_request#about">
+   <table width="292" border="6"  class="table table-light" style="width:1150px;">
+       <tr align="center"  class="table-secondary">
+      <td colspan="12"><h2><b>ADD TO CART</b></h2></td>
+
+        <tr>
+     <th >Product Name
+      <td><input type="text" name="textfield" value="{{ p }}"  style="width:206px;" readonly/></td>
+    </tr>
+    <tr>
+      <th>Product Quantity </th>
+      <td><input type="text" name="qty"   id="qt" style="width:206px;" required />
+        <p id="uu"></p></td>
+
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Submit" value="Send" id="bt" class="btn btn-primary"/>
+      </div></td>
+    </tr>
+  </table>
+</form>
+
+<script src="/static/reg/vendor/jquery/jquery.min.js"></script>
+
+
+    <!-- Vendor JS-->
+    <script src="/static/reg/vendor/select2/select2.min.js"></script>
+    <script src="/static/reg/vendor/datepicker/moment.min.js"></script>
+    <script src="/static/reg/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="/static/reg/js/global.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $("#qt").keyup(function () {
+      var stock = $(this).val();
+
+
+    $.ajax(
+    {
+        type:"GET",
+        url: "/stock",
+        data:{
+                 st: stock
+
+
+        },
+        dataType: 'json',
+        success: function( data )
+        {
+            stockk=data["stock"]
+
+            if(stockk=="g")
+            {
+
+
+                $("#uu").html("Limited");
+{#                 document.getElementById("uu").style.display="Limited";#}
+                document.getElementById("uu").style.display="block";
+                document.getElementById("bt").style.display="none";
+                 document.getElementById("uu").innerText="Out of Stock";
+
+            }
+            else {
+                 document.getElementById("bt").style.display="block";
+                 document.getElementById("uu").style.display="none";
+            }
+
+{#            if (data.is_taken) {#}
+{#            document.getElementById("uu").innerText="Stock is limited";#}
+{#          }#}
+{#          else#}
+{#            { document.getElementById("uu").innerText="";}#}
+        }
+     })
+});
+</script>
+
+</body>
+</html>
+{% endblock %}
+

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FakeProduct"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".ReturnPolicy"
+            android:exported="false" />
+        <activity
+            android:name=".background"
+            android:exported="false" />
+        <activity
+            android:name=".view_qr"
+            android:exported="false" />
+        <activity
+            android:name=".ScanQR"
+            android:exported="false" />
+        <activity
+            android:name=".ReturnProduct"
+            android:exported="false" />
+        <activity
+            android:name=".ViewOrders"
+            android:exported="false" />
+        <activity
+            android:name=".CustomPurchaseHistory"
+            android:exported="false" />
+        <activity
+            android:name=".PurchaseHistory"
+            android:exported="false" />
+        <activity
+            android:name=".ordernow"
+            android:exported="false" />
+        <activity
+            android:name=".viewmycard"
+            android:exported="false" />
+        <activity
+            android:name=".Payment"
+            android:exported="false" />
+        <activity
+            android:name=".CustomViewCart"
+            android:exported="false" />
+        <activity
+            android:name=".ViewCart"
+            android:exported="false" />
+        <activity
+            android:name=".AddToCart"
+            android:exported="false" />
+        <activity
+            android:name=".ViewProductDetails"
+            android:exported="false" />
+        <activity
+            android:name=".CustomViewShop"
+            android:exported="false" />
+        <activity
+            android:name=".ViewShop"
+            android:exported="false" />
+        <activity
+            android:name=".CustomViewProduct"
+            android:exported="false" />
+        <activity
+            android:name=".Viewproduct"
+            android:exported="false" />
+        <activity
+            android:name=".home"
+            android:exported="false" />
+        <activity
+            android:name=".registration"
+            android:exported="false" />
+        <activity
+            android:name=".login"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

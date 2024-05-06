@@ -1,0 +1,45 @@
+{% extends 'Admin/admin index.html' %}
+{% block body %}
+
+<body>
+<div id="" style="overflow:scroll; height:500px;">
+<form id="form1" name="form1" method="post" action="/searchman#about">
+ <table width="492" height="216" border="1" class="table table-light">
+   <tr align="center"  class="table-secondary">
+      <td colspan="10"><h2><b>VERIFY MANUFACTURER</b></h2></td>
+
+  </tr>
+    <tr>
+      <th colspan="7">Name
+      <input type="text" name="textfield" value="{{ name }}" />
+      <input type="submit" name="Submit" value="Search" class="btn btn-primary"/></td>
+    </tr>
+    <tr>
+      <th width="78">Name</th>
+      <th width="55">Place</td>
+      <th width="61">Phone Number </th>
+{#      <td width="37">Photo</td>#}
+      <th width="25">Proof</th>
+      <th width="29">Email</th>
+      <th width="29">&nbsp;</th>
+    </tr>{% for i in val %}
+    <tr>
+      <td><img src="{{ i.photo.url }}" width="100" height="100"><br>{{ i.name }}</td>
+      <td>{{ i.place }}</td>
+      <td>{{ i.ph_no }}</td>
+{#      <td>{{ i.photo }}</td>#}
+        <td><a href=" {{ i.proof.url }}" target="_blank" >{{ i.proof }}</a></td>
+      <td>{{ i.email }}</td>
+        {% if i.LOGIN.type == "pending" %}
+      <td><p ><a href="{% url 'accept_manufacturer' id=i.LOGIN.id %}" class="btn btn-success"> Verify</a></p>
+      <p ><a href="{% url 'reject_manufacturer' id=i.LOGIN.id %}" class="btn btn-danger">Reject</a></p></td>
+    {% elif i.LOGIN.type == "manufacturer"%}
+            <td><p ><i class="text-success">Verified</i></p></td>
+     {% elif i.LOGIN.type == "rejected"%}
+       <td><p ><i class="text-danger">Rejected</i></p></td>
+    {% endif %}
+  </tr>{% endfor %}  </table>
+</form></div>
+</body>
+</html>
+{% endblock %}

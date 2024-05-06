@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home"
+    android:orientation="vertical"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:elevation="5dp"
+        app:cardBackgroundColor="@color/cyan_light">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Return Policy"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. According to India’s returns policy gives you an option to return return items purchased for any reason within the specified return period."
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="355dp"
+                android:layout_height="wrap_content"
+                android:text="We only ask that you don't use the product and preserve its original condition, tags, and packaging."
+                android:textSize="15dp" />
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="345dp"
+                android:layout_height="wrap_content"
+                android:text="2. The purchased item return is valid within 7 days from the date on which these goods were delivered."
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text=" 3.The shop check on the returned item to ensure its condition aligns with genuine reasons for return." />
+
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/textView34"-->
+<!--                android:layout_width="345dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="4. We offer a free pick up service. You will see a pickup option when you submit a return request."-->
+<!--                android:textSize="15dp" />-->
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="4.All returnitems to be returned must be unused in their original condition with all original tags and packaging intact (for e.g. T-shirt must be packed in the original package)." />
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+            <TextView
+                android:id="@+id/textView41"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="5. In case you have purchased an return item which has a free gift/offer associated with it and you wish to return the main return item, then you will have to return the free product as well." />
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+            <TextView
+                android:id="@+id/textView43"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="6. Payments made via Credit Cards, Debit Card, Net Banking or wallet, will be refunded in 7-10 working days from the time of order cancellation." />
+
+            <TextView
+                android:id="@+id/textView44"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+            <TextView
+                android:id="@+id/textView45"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="7. This application doesn't currently offer exchanges. Purchased items can only be returned for genuine reasons." />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+{% extends 'Shop/shop index.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="/addbillcode">
+ <table width="292" border="6"  class="table table-light"style="width:1100px;height:400px">
+  <tr align="center"  class="table-secondary">
+      <td colspan="5"><h2><b>ADD BILL</b></h2></td>
+  </tr>
+    <tr>
+      <th width="166">Name</th>
+      <td width="109"><input type="text" name="textfield" style="width:206px;" required pattern="[A-Z a-z .]{2,25}" /></td>
+    </tr>
+    <tr>
+      <th>Phone</th>
+      <td><input type="number" name="textfield2"  style="width:206px;" required/></td>
+    </tr>
+
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Submit" value="Add" class="btn btn-primary" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

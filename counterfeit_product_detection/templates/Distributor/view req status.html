@@ -1,0 +1,35 @@
+{% extends 'Distributor/distributor index.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+    <table width="492" height="216" border="1" class="table table-light">
+     <tr align="center"  class="table-secondary">
+      <td colspan="10"><h2><b>VIEW PRODUCT DETAILS</b></h2></td>
+     </tr>
+    <tr>
+       <th>Product</th>
+      <th>Size</th>
+      <th>Quantity</th>
+      <th>Price</th>
+
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ i.pname }}</td>
+      <td>{{ i.size }}</td>
+      <td>{{ i.quantity }}</td>
+      <td>{{ i.tp }}.00</td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <th colspan="3">Total</th>
+      <td >&nbsp;{{ total }}.00</td>
+    </tr>
+
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

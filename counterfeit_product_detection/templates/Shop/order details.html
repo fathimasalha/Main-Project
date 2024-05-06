@@ -1,0 +1,59 @@
+{#<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">#}
+{#<html xmlns="http://www.w3.org/1999/xhtml">#}
+{#<head>#}
+{#<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />#}
+{#<title>Untitled Document</title>#}
+{#</head>#}
+{##}
+{#<body>#}
+{% extends 'Shop/shop index.html' %}
+{% block body %}
+
+<form action="/ordrprdctcode" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="313" class="table table-striped table-light" >
+    <tr>
+      <td colspan="2" align="center">
+          <label>
+       <img src="{{ val.photo.url }}" width="180" height="200">
+      </label>
+      </td>
+    </tr>
+    <tr>
+      <th width="92">Product Name</th>
+      <td width="205"><label>
+        <input type="text" name="textfield" value="{{ val.pname }}" disabled/>
+      </label></td>
+    </tr>
+    <tr>
+      <th>stock</th>
+      <td><label>
+        <input type="text" name="textfield2" value="{{ val.stock }}" disabled/>
+      </label></td>
+    </tr>
+      <tr>
+      <th>Price</th>
+      <td><label>
+        <input type="text" name="textfield4" value="{{ val.price }}0"  disabled />
+      </label></td>
+    </tr>
+    <tr>
+      <th>Quantity </th>
+      <td><label>
+        <input type="number" name="textfield3"   required  />
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+          <a href="/ordrprdct#about" class="btn btn-outline-info">BACK</a>
+        <label>
+        <input type="submit" align="right" name="Submit" value="ADD TO CART" class="btn btn-outline-success"/>
+        </label>
+                <input type="submit" align="right" name="Submit" value="ORDER NOW" class="btn btn-outline-primary"/>
+
+      </td>
+    </tr>
+  </table>
+</form>
+{% endblock %}
+{#</body>#}
+{#</html>#}

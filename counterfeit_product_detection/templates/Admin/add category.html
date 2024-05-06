@@ -1,0 +1,28 @@
+{% extends 'Admin/admin index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/addedcategory#about">
+ <table width="292" border="6"  class="table table-light" style="width:1150px;">
+      <tr align="center"  class="table-secondary">
+      <td colspan="10"><h2><b>ADD CATEGORY</b></h2></td>
+
+  </tr>
+    <tr>
+      <th width="142">Category</th>
+      <td width="95"><input type="text" name="textfield" style="width:206px;" required pattern="[A-Z a-z .]{2,25}"/></td>
+    </tr>
+    <tr>
+      <th>Details</th>
+      <td><textarea name="textarea" style="width:206px;" required></textarea></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Submit" value="ADD"  class="btn btn-primary" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

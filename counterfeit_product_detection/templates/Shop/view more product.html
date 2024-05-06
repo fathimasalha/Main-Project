@@ -1,0 +1,39 @@
+{% extends 'Shop/shop index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/finish_order_s">
+    <table width="492" height="216" border="1" class="table table-light">
+     <tr align="center"  class="table-secondary">
+      <td colspan="10"><h2><b>PRODUCT DETAILS</b></h2></td>
+
+  </tr>
+
+      <tr><th colspan="4">Name: {{name}}</th></tr>
+     <tr><th colspan="4">Phone: {{phone}}</th></tr>
+
+    <tr>
+      <th>Product</th>
+      <th>Size</th>
+      <th>Quantity</th>
+      <th>Price</th>
+
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td><img src="{{ i.PRODUCT.PRODUCT.PRODUCT.photo.url }}" width="80" height="100"><br>
+          {{ i.PRODUCT.PRODUCT.PRODUCT.pname }}</td>
+      <td>{{ i.size }}</td>
+      <td>&nbsp;{{ i.quantity }}</td>
+      <td>{{ i.PRODUCT.PRODUCT.PRODUCT.price }}0</td>
+
+    </tr>
+      {% endfor %}
+     <tr><td colspan="4" ALIGN="center"><b>SUB TOTAL: {{total}}.00</b></td></tr>
+     <tr><td colspan="4" ALIGN="center"><b>TOTAL: {{gst}}.00</b></td></tr>
+
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

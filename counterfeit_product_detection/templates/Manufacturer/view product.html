@@ -1,0 +1,50 @@
+{% extends 'Manufacturer/man index.html' %}
+{% block body %}
+
+<body>
+<div id="" style="overflow:scroll; height:500px;">
+<form id="form1" name="form1" method="post" action="/searchproducts#hero">
+  <table width="492" height="216" border="1" class="table table-light">
+   <tr align="center"  class="table-secondary">
+      <td colspan="12"><h2><b>VIEW PRODUCT AND UPDATE STOCK</b></h2></td>
+
+  </tr>
+    <tr>
+      <th colspan="11">Product Name
+        <input type="text" name="textfield" value="{{ name }}" />
+       Category
+        <select name="select"  class="btn btn-light dropdown-toggle" >
+             {% for i in val1 %}
+            <option value="{{ i.id }}" {% if i.id == cat %} selected {% endif %}>{{ i.category }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" name="Submit" value="Search"  class="btn btn-primary"/></th>
+    </tr>
+    <tr>
+      <th >Product Name </th>
+      <th>Description</th>
+      <th >Category</th>
+      <th>Price</th>
+      <th >Size</th>
+      <th>Total Stock</th>
+{#      <th>Date</th>#}
+      <th>&nbsp;</th>
+      <th></th>
+    </tr>{% for i in val %}
+    <tr>
+      <td><img src="{{ i.photo.url }}" width="100" height="130"><br>{{ i.pname }}&nbsp;</td>
+      <td>{{ i.description }}</td>
+      <td>&nbsp;{{ i.CATEGORY.category }}</td>
+       <td>{{ i.price }}0</td>
+       <td>{{ i.size }}</td>
+      <td>{{ i.stock }}</td>
+{#      <td>&nbsp;{{ i.mdate }}</td>#}
+      <td></td>
+      <td><a href="updatequantity/{{ i.id }}#hero" class="btn btn-info">Update Stock</a><br><br>
+    <a href="/viewstock/{{ i.id }}/{{ i.pname }}" class="btn btn-link" >View Stock</a></td>
+    </tr>{% endfor %}
+  </table>
+</form></div>
+</body>
+</html>
+{% endblock %}

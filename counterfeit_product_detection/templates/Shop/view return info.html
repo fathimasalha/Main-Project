@@ -1,0 +1,47 @@
+{% extends 'Shop/shop index.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="/search_retuninfo">
+ <table width="492" height="216" border="1" class="table table-light">
+   <tr align="center"  class="table-secondary">
+      <td colspan="7"><h2><b>RETURN INFORMATIONS</b></h2></td>
+
+  </tr>
+    <tr>
+      <th colspan="5">
+        Date
+        <input type="date" name="date" value="{{ d }}"/>
+        <input type="submit" name="Submit" value="Search" class="btn btn-primary"/></th>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <th >Product Name </th>
+      <th >Date</th>
+      <th >Reason</th>
+      <th >&nbsp;Status</th>
+
+    </tr>{% for i in val %}
+    <tr>
+      <td>{{ i.ORDER.ORDER.USER.name}}</td>
+      <td>&nbsp;{{ i.ORDER.PRODUCT.PRODUCT.PRODUCT.pname}}</td>
+      <td>{{ i.date }}</td>
+           <td>{{ i.reason }}</td>
+
+        <td>
+            {% if i.status == "pending" %}
+
+            <p><a href="/acceptreturninfo/{{ i.id }}"><i class="btn btn-outline-success">Accept</i></a></p>
+            <p><a href="/rejectreturninfo/{{ i.id }}"><i class="btn btn-outline-danger">Reject</i></a></p>
+            {% else %}
+            <p>{{ i.status }}</p>
+            {% endif %}
+
+        </td>
+    </tr>{% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'Distributor/distributor index.html' %}
+{% block body %}
+
+<body>
+<div id="" style="overflow:scroll; height:500px;">
+<form id="form1" name="form1" method="post" action="searchman1#hero">
+  <table width="492" height="216" border="1" class="table table-light">
+   <tr align="center"  class="table-secondary">
+      <td colspan="11"><h2><b>VIEW MANUFACTURER</b></h2></td>
+
+  </tr>
+    <tr>
+      <th colspan="8">Name
+      <input type="text" name="textfield" value="{{ name }}"/>
+      <input type="submit" name="Submit" value="Search"  class="btn btn-primary"/></th>
+    </tr>
+
+    <tr>
+      <th >Name</th>
+      <th >Place</th>
+      <th >Phone Number </th>
+{#      <th width="36">Photo</th>#}
+      <th >Proof</th>
+      <th >Email</th>
+        <th></th>
+      <th>&nbsp;</th>
+    </tr>{% for i in val %}
+    <tr>
+      <td><img src="{{ i.photo.url }}" width="100" height="100"><br>{{ i.name }}</td>
+      <td>{{ i.place }}</td>
+      <td>&nbsp;{{ i.ph_no }}</td>
+      <td><a href=" {{ i.proof.url }}" target="_blank" >{{ i.proof }}</a></td>
+      <td>{{ i.email }}</td>
+      <td>&nbsp;</td>
+      <td><a href="/view_product/{{ i.id }}#hero" class="btn btn-link">View Product</a></td>
+    </tr>{% endfor %}
+  </table>
+</form></div>
+</body>
+</html>
+{% endblock %}

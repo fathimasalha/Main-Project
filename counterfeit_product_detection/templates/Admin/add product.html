@@ -1,0 +1,71 @@
+{% extends 'Admin/admin index.html' %}
+{% block body %}
+
+<body>
+<form action="/addedproduct#about" method="post" enctype="multipart/form-data" name="form1" id="form1">
+ <table width="292" border="6"  class="table table-light"style="width:1200px;height:500px">
+  <tr align="center"  class="table-secondary">
+      <td colspan="10"><h2><b>ADD PRODUCT</b></h2></td>
+
+  </tr>
+    <tr>
+      <th>Product Name </th>
+      <td><input type="text" name="textfield"  style="width:206px;" required pattern="[A-Z a-z .]{2,25}" /></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td><textarea name="textarea"  style="width:206px;" required></textarea></td>
+    </tr>
+    <tr>
+      <th>Category</th>
+      <td><select name="select"  class="btn btn-light dropdown-toggle" required>
+          {% for i in val %}
+          <option value="{{ i.id }}">{{ i.category }}</option>
+          {% endfor %}
+      </select></td>
+    </tr>
+    <tr>
+      <th>Photo</th>
+      <td><input type="file" name="file"  accept="image/*"  style="width:206px;" required/></td>
+    </tr>
+    <tr>
+      <th>Price</th>
+      <td><input type="text" name="textfield2"  style="width:206px;" required/></td>
+    </tr>
+    <tr>
+      <th>Size</th>
+      <td>
+  <div class="btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-light">
+      <input type="checkbox" name="size" value="S"> S
+    </label>
+    <label class="btn btn-light">
+      <input type="checkbox" name="size" value="M" > M
+    </label>
+    <label class="btn btn-light">
+      <input type="checkbox" name="size" value="L" > L
+    </label>
+    <label class="btn btn-light">
+      <input type="checkbox" name="size" value="XL" > XL
+    </label>
+     <label class="btn btn-light">
+      <input type="checkbox" name="size" value="XXL" > XXL
+    </label>
+  </div>
+</td>
+    </tr>
+
+{#    <tr>#}
+{#      <td>Stock</td>#}
+{#      <td><input type="text" name="textfield3" /></td>#}
+{#    </tr>#}
+    <tr>
+      <td colspan="7"><div align="center">
+        <input type="submit" name="Submit" value="ADD"  class="btn btn-primary" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

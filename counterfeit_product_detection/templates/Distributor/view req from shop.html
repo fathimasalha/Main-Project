@@ -1,0 +1,43 @@
+{% extends 'Distributor/distributor index.html' %}
+{% block body %}
+
+<body>
+<div id="" style="overflow:scroll; height:500px;">
+<form id="form1" name="form1" method="post" action="{% url 'search_req_s' %}">
+  <table width="492" height="216" border="1" class="table table-light">
+   <tr align="center"  class="table-secondary">
+      <td colspan="15"><h2><b>VIEW REQUEST AND UPDATE STATUS</b></h2></td>
+
+  </tr>
+    <tr>
+      <th colspan="12">
+        Date
+        <input type="date" name="textfield2" value="{{ date }}"/>
+        <input type="submit" name="Submit" value="Search" class="btn btn-primary" /></th>
+    </tr>
+    <tr>
+      <th >Date </th>
+      <th >Shop</th>
+      <th>Amount</th>
+        <th >Status</th>
+      <th >&nbsp;</th>
+        <th></th>
+
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ i.date }}&nbsp;</td>
+      <td>{{ i.SHOP.name }}</td>
+      <td>{{ i.amount }}0</td>
+       <td>&nbsp;{{ i.status }}</td>
+      <td><p><a href="view_req_details_s/{{i.id}}" class="btn btn-link">View Details</a></p>
+
+        <td>{% if i.status == "pending" %}<a href="/accept_shopreq/{{ i.id }}"  class="btn btn-success">Accept</a><br><br>
+       <a href="/reject_shopreq/{{ i.id }}"  class="btn btn-danger">Reject</a>{% endif %}</td>
+
+    </tr>{% endfor %}
+  </table>
+</form></div>
+</body>
+</html>
+{% endblock %}

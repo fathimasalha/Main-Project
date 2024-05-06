@@ -1,0 +1,38 @@
+{% extends 'Distributor/distributor index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/finish_order">
+    <table width="492" height="216" border="1" class="table table-light">
+     <tr align="center"  class="table-secondary">
+      <td colspan="15"><h2><b>CART DETAILS</b></h2></td>
+
+  </tr>
+    <tr>
+      <th>Product</th>
+      <th>Size</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ i.PRODUCT.PRODUCT.pname }}</td>
+      <td>{{ i.PRODUCT.size }}</td>
+      <td>&nbsp;{{ i.quantity }}</td>
+      <td>&nbsp;{{ i.tp }}.00</td>
+
+    </tr>
+      {% endfor %}
+    <tr>
+      <th colspan="3">Total</th>
+      <td >&nbsp;{{ t }}.00</td>
+    </tr>
+    <tr>
+      <td><a href="/view_product/{{ request.session.mid }}" class="btn btn-link">Add</a></td>
+      <td colspan="5"><input type="submit" name="Submit" value="Finish" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}
